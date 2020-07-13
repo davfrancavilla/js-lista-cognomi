@@ -9,8 +9,18 @@ var big = userLastName.slice(0,1).toUpperCase();
 var small = userLastName.slice(1,userLastName.length).toLowerCase();
 userLastName = big + small;
 
-// inserisco il cognome dell'utente nell'array
-lastNames.push(userLastName);
+// controllo se il cognome inserito dall'utente è già presente nell'array e se non lo è lo inserisco
+var x;
+var check = true;
+for (x in lastNames) {
+    if (lastNames[x] == userLastName) {
+        check = false;
+    }
+}
+if (check) {
+    lastNames.push(userLastName);
+}
+
 
 // ordine l'array alfabeticamente
 lastNames.sort();
